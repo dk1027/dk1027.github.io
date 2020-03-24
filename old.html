@@ -9,7 +9,9 @@
       analytics.load("JoOEm07fcP1I8rJZpJLJUHWKY4PeCY5f");
       analytics.page();
       }}();
+      analytics.ready(function() {
+        analytics.user().anonymousId("foobar")
+      });
     </script>
-    <script>analytics.user().anonymousId("foobar")</script>
   </body>
 </html>
