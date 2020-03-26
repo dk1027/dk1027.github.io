@@ -27,7 +27,6 @@
             "vars": {
               "writeKey": "EwVCDKYPOzSILNXsMkaUlknaju1kg396",
               "name": "My Page Name",
-              "canonicalUrl": "foobar"
             },
             "triggers": {
               "page": {
@@ -41,16 +40,21 @@
                   "properties.article_id": "my-article-id"
                 }
               },
-              "track": {
-                "on": "visible",
+              "click": {
+                "on": "click",
+                "selector": ".read-more-button",
                 "request": "track",
-                "extraUrlParams": {
+                "vars": {
+                  "event": "Read More Clicked",
+                  "test": "foobar"
+                },
+                ""extraUrlParams": {
                   "properties.type": "article",
                   "properties.published_at": "2016-06-28",
-                  "properties.author": "daniel",
+                  "properties.author": "John Doe",
                   "properties.button_type": "read-more",
                   "properties.article_id": "my-article-id"
-                }
+                }"
               }
             },
             "linkers": {
@@ -59,5 +63,6 @@
           }
         </script>
         </amp-analytics>
+        <button class="read-more-button">Read More</button>
   </body>
 </html>
