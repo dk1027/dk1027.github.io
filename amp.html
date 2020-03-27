@@ -30,8 +30,12 @@
             },
             "triggers": {
               "page": {
-                "on": "click",
-                "request": "page"
+                "on": "visible",
+                "request": "page",
+                "sampleSpec": {
+                  "sampleOn": "foo",
+                  "threshold": 0
+                }
               },
               "click": {
                 "on": "click",
