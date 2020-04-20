@@ -25,7 +25,6 @@
         var f = function({payload, next, integrations}) {payload.obj.userId="bar"; next(payload);};
         analytics.addSourceMiddleware(f);
         analytics.load("N79RtxUOQ0tz1Mx9FnXIxs2NxtjmW4Ig");
-        analytics.addSourceMiddleware(f);
         analytics.page();
         }}();
       </script>
