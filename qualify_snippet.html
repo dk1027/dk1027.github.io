@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>AJS tester</title>
+  </head>
+  <body>
+    <form method="GET">
+      <input type="text" name="writeKey" placeholder="Write key"/>
+      <button>Load</button>
+    </form>
+    <p></p>
+
+    <button onclick="analytics.track('Product Viewed')">Track: Product Viewed</button>
+    <button onclick="analytics.track('Checkout Started')">Track: Checkout Started</button>
+    <button onclick="analytics.track('Coupon Denied')">Track: Coupon Denied</button>
+    <br/>
+    <button onclick="analytics.page('Home')">Page: Home</button>
+    <button onclick="analytics.page('About')">Page: About</button>
+    <button onclick="analytics.page('Contact')">Page: Contact</button>
+    <br/>
+    <button onclick="analytics.identify('fathy')">Identify: fathy</button>
+    <button onclick="analytics.identify('spongebob')">Identify: spongebob</button>
+
+  </body>
+</html>
