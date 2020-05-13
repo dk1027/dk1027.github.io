@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>AJS tester</title>
+  </head>
+  <body>
+    <form method="GET">
+      <input type="text" name="writeKey" placeholder="Write key"/>
+      <button>Load</button>
+    </form>
+    <p></p>
+
+    <button onclick="analytics.track('Product Viewed')">Track: Product Viewed</button>
+    <button onclick="analytics.track('Checkout Started')">Track: Checkout Started</button>
+    <button onclick="analytics.track('Coupon Denied')">Track: Coupon Denied</button>
+    <br/>
+    <button onclick="analytics.page('Home')">Page: Home</button>
+    <button onclick="analytics.page('About')">Page: About</button>
+    <button onclick="analytics.page('Contact')">Page: Contact</button>
+    <br/>
+    <button onclick="analytics.identify('fathy')">Identify: fathy</button>
+    <button onclick="analytics.identify('spongebob')">Identify: spongebob</button>
+
+<script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var t=analytics.methods[e];analytics[t]=analytics.factory(t)}analytics.load=function(e,t){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+e+"/analytics.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=t};analytics.SNIPPET_VERSION="4.1.0";
+  analytics.load("hhFQJZcgWTvSQMsV65A8R2X0Xfa0hLcQ");
+  analytics.page();
+  }}();
+</script>
+  </body>
+</html>
