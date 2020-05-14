@@ -28,43 +28,6 @@
               "writeKey": "frrADys15e7SXTqA6JwepCGC2mYB7Ipy",
               "name": "My Page Name"
             },
-            "triggers": {
-              "page": {
-                "on": "visible",
-                "request": "page",
-                "sampleSpec": {
-                  "sampleOn": "foo",
-                  "threshold": 0
-                }
-              },
-              "click": {
-                "on": "click",
-                "selector": ".read-more-button",
-                "request": "track",
-                "vars": {
-                  "event": "Read More Clicked"
-                },
-                "extraUrlParams": {
-                  "properties.type": "article",
-                  "properties.published_at": "2016-06-28",
-                  "properties.author": "daniel",
-                  "properties.button_type": "read-more",
-                  "properties.article_id": "my-article-id"
-                }
-              },
-              "goToLink": {
-                "on": "click",
-                "selector": ".go-to-link",
-                "request": "track",
-                "vars": {
-                  "event": "Navigated to Non AMP Page"
-                },
-                "extraUrlParams": {
-                  "properties.author": "julio",
-                  "properties.link_type": "non-amp"
-                }
-              }
-            },
             "linkers": {
                 "enabled": true,
                 "linker1": {
@@ -76,8 +39,6 @@
           }
         </script>
         </amp-analytics>
-        <button class="read-more-button">Read More</button>
-        <a class="go-to-link" href="non-amp.html">Go to a non AMP page</a>
-        <a href="non-amp.html" href="another-amp.html">Go to an AMP page</a>
+        <p>Another AMP</p>
   </body>
 </html>
