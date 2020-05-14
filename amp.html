@@ -25,7 +25,7 @@
         <script type="application/json">
           {
             "vars": {
-              "writeKey": "EwVCDKYPOzSILNXsMkaUlknaju1kg396",
+              "writeKey": "frrADys15e7SXTqA6JwepCGC2mYB7Ipy",
               "name": "My Page Name"
             },
             "triggers": {
@@ -51,6 +51,18 @@
                   "properties.button_type": "read-more",
                   "properties.article_id": "my-article-id"
                 }
+              },
+              "goToLink": {
+                "on": "click",
+                "selector": ".go-to-link",
+                "request": "track",
+                "vars": {
+                  "event": "Navigated to Non AMP Page"
+                },
+                "extraUrlParams": {
+                  "properties.author": "julio",
+                  "properties.link_type": "non-amp"
+                }
               }
             },
             "linkers": {
@@ -60,5 +72,6 @@
         </script>
         </amp-analytics>
         <button class="read-more-button">Read More</button>
+        <a class="go-to-link" href="non-amp.html">Go to Non AMP page</a>
   </body>
 </html>
