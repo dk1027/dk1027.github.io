@@ -29,34 +29,43 @@
       Identify: spongebob
     </button>
     <button
-      onclick="analytics.group(1,
-      {
-        'address': {
-          'city': 'Vancouver',
-          'country': 'Canada',
-          'postalCode': 'V6b3E2',
-          'state': 'BC',
-          'street': '21 Jump St'
+      onclick="analytics.group(
+        'group name',
+        {
+          'address': {
+            'city': 'Vancouver',
+            'country': 'Canada',
+            'postalCode': 'V6b3E2',
+            'state': 'BC',
+            'street': '21 Jump St'
+          },
+          'avatar': 'does not exist',
+          'createdAt': new Date(),
+          'description': 'a fake group',
+          'email': 'email-me-not@domain.com',
+          'employees': 3,
+          'id': 1,
+          'industry': 'sw eng',
+          'name': 'libweb',
+          'phone': '555-pizza',
+          'website': 'www.google.com',
+          'plan': 'business'
         },
-        'avatar': 'does not exist',
-        'createdAt': new Date(),
-        'description': 'a fake group',
-        'email': 'email-me-not@domain.com',
-        'employees': 3,
-        'id': 1,
-        'industry': 'sw eng',
-        'name': 'libweb',
-        'phone': '555-pizza',
-        'website': 'www.google.com',
-        'plan': 'business'
-      },
-    { 
-      'integrations': {
-        'All': true
-      }
-    }, function() { console.log('hello callback')})"
+        { 
+          'integrations': {
+            'All': true
+          }
+        }, function() { console.log('hello callback')})"
     >
       Group
+    </button>
+
+    <button
+      onclick="analytics.alias('userId', 'previous id', { 
+        'integrations': { 'All': true }
+      }, function(){ console.log('Im an alias callback')})"
+    >
+      Alias
     </button>
 
     <br />
