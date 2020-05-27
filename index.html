@@ -142,6 +142,7 @@
         status("loading ajs");
 
         analytics.ready(() => {
+          analytics.reset();
           var f = function ({ payload, next, integrations }) {
             payload.obj.userId = "bar";
             next(payload);
