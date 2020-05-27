@@ -134,16 +134,6 @@
                 analytics._loadOptions = e;
               };
               analytics.SNIPPET_VERSION = "4.1.0";
-              var f = function ({ payload, next, integrations }) {
-                payload.obj.userId = "bar";
-                next(payload);
-              };
-              var f2 = function ({ payload, next, integrations }) {
-                payload.obj.userId = payload.obj.userId + "f";
-                next(payload);
-              };
-              analytics.addSourceMiddleware(f);
-              analytics.addSourceMiddleware(f2);
               analytics.load(writeKey);
               analytics.page();
             }
@@ -151,11 +141,21 @@
 
         status("loading ajs");
 
-        analytics.ready(() =>
-          status(
+        analytics.ready(() => {
+          var f = function ({ payload, next, integrations }) {
+            payload.obj.userId = "bar";
+            next(payload);
+          };
+          var f2 = function ({ payload, next, integrations }) {
+            payload.obj.userId = payload.obj.userId + "f";
+            next(payload);
+          };
+          analytics.addSourceMiddleware(f);
+          analytics.addSourceMiddleware(f2);
+          return status(
             `ajs ${analytics.VERSION} loaded, write key: ${analytics._integrations["Segment.io"].options.apiKey}`
-          )
-        );
+          );
+        });
       } else {
         status("ajs not loaded, enter a write key");
       }
