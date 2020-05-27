@@ -135,6 +135,16 @@
               };
               analytics.SNIPPET_VERSION = "4.1.0";
               analytics.load(writeKey);
+              var f = function ({ payload, next, integrations }) {
+                payload.obj.userId = "bar";
+                next(payload);
+              };
+              var f2 = function ({ payload, next, integrations }) {
+                payload.obj.userId = payload.obj.userId + "f";
+                next(payload);
+              };
+              analytics.addSourceMiddleware(f);
+              analytics.addSourceMiddleware(f2);
               analytics.page();
             }
         })();
