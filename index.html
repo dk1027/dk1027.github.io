@@ -10,25 +10,26 @@
     </form>
     <p></p>
 
-    <button onclick="analytics.track('Product Viewed')">
+    <button id='track-product-viewed' onclick="analytics.track('Product Viewed')">
       Track: Product Viewed
     </button>
-    <button onclick="analytics.track('Checkout Started')">
+    <button id='track-checkout-started' onclick="analytics.track('Checkout Started')">
       Track: Checkout Started
     </button>
-    <button onclick="analytics.track('Coupon Denied')">
+    <button id='track-coupon-denied' onclick="analytics.track('Coupon Denied')">
       Track: Coupon Denied
     </button>
     <br />
-    <button onclick="analytics.page('Home')">Page: Home</button>
-    <button onclick="analytics.page('About')">Page: About</button>
-    <button onclick="analytics.page('Contact')">Page: Contact</button>
+    <button id='page-home' onclick="analytics.page('Home')">Page: Home</button>
+    <button id='page-about' onclick="analytics.page('About')">Page: About</button>
+    <button id='page-contact' onclick="analytics.page('Contact')">Page: Contact</button>
     <br />
-    <button onclick="analytics.identify('fathy')">Identify: fathy</button>
-    <button onclick="analytics.identify('spongebob')">
+    <button id='identify-fathy' onclick="analytics.identify('fathy')">Identify: fathy</button>
+    <button id='identify-spongebob' onclick="analytics.identify('spongebob')">
       Identify: spongebob
     </button>
     <button
+      id='group'
       onclick="analytics.group(
         'group name',
         {
@@ -51,7 +52,7 @@
           'website': 'www.google.com',
           'plan': 'business'
         },
-        { 
+        {
           'integrations': {
             'All': true
           }
@@ -61,7 +62,8 @@
     </button>
 
     <button
-      onclick="analytics.alias('userId', 'previous id', { 
+      id='alias'
+      onclick="analytics.alias('userId', 'previous id', {
         'integrations': { 'All': true }
       }, function(){ console.log('Im an alias callback')})"
     >
@@ -74,7 +76,7 @@
     <script>
       const { searchParams } = new URL(document.location);
       const writeKey = searchParams.get("writeKey");
-      const cdnHost = searchParams.get("cdnHost");
+      const cdnHost = searchParams.get("cdnHost") || 'cdn.segment.com';
       const status = (s) => (document.querySelector("p").innerText = s);
 
       document.querySelector("input").value = writeKey;
