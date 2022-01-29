@@ -9,7 +9,9 @@
       <button>Load</button>
     </form>
     <p id="status-msg"></p>
-
+    <button id="custom-event" onclick="analytics.track('custom-event', customEventObj || {})">
+      Custom Event
+    </button>
     <button id="track-product-viewed" onclick="analytics.track('Product Viewed')">
       Track: Product Viewed
     </button>
